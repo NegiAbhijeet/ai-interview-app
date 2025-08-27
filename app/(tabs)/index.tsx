@@ -11,7 +11,7 @@ const Home = () => {
     <ScreenContainer>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View className="py-6 px-2">
-          <Text className="text-xl font-semibold mb-4">
+          <Text className="text-2xl font-semibold mb-4">
             Welcome back, Sarah 👋
           </Text>
 
@@ -40,7 +40,7 @@ const Home = () => {
           <Text className="text-lg font-semibold mt-8 mb-2">
             Recent Sessions
           </Text>
-          <View className="space-y-2">
+          <View className="gap-2">
             <SessionItem
               title="Frontend Developer"
               date="Dec 15, 2024"

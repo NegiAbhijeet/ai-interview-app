@@ -45,7 +45,7 @@ const Home = () => {
           />
 
           <Text className="mt-4 mb-1 text-sm">Choose Agent</Text>
-          <View className="flex-row space-x-4 gap-4">
+          <View className="flex-row gap-4">
             {["Nova", "Mira"].map((agent) => (
               <TouchableOpacity
                 key={agent}
