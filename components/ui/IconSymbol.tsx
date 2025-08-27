@@ -15,9 +15,9 @@ type IconSymbolName = keyof typeof MAPPING;
  */
 const MAPPING = {
   'house.fill': 'home',
-  'briefcase.fill': 'work',               // Jobs tab
-  'text.bubble.fill': 'chat',             // Interview tab
-  'doc.text.fill': 'description',         // Resume tab
+  'briefcase.fill': 'work',             
+  'text.bubble.fill': 'chat',             
+  'doc.text.fill': 'description',       
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',

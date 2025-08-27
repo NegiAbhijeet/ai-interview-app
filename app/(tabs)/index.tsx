@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <ScreenContainer>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="py-6">
+        <View className="py-6 px-2">
           <Text className="text-xl font-semibold mb-4">
             Welcome back, Sarah 👋
           </Text>

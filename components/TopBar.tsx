@@ -4,7 +4,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 
 const TopBar = () => {
   return (
-    <View className="flex-row justify-between items-center h-14 px-4 py-2 bg-white">
+    <View className="flex-row justify-between items-center h-14 px-6 py-2 bg-white border-b border-black/10">
       <Image
         source={require("@/assets/logo.png")}
         className="h-10 w-10"
