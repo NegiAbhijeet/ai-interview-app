@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TopBar from "./TopBar";
 
@@ -12,7 +12,11 @@ const ScreenContainer = ({ children, className = "" }: Props) => {
   return (
     <SafeAreaView edges={["top"]} className={`flex-1 bg-white ${className}`}>
       <TopBar />
-      <View className="flex-1 px-4">{children}</View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View className="p-6">
+          {children}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

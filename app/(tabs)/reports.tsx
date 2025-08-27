@@ -58,86 +58,82 @@ const reportData = [
 const Reports = () => {
   return (
     <ScreenContainer>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="py-6 px-2">
-          <Text className="text-xl font-bold mb-4">Reports</Text>
-
-          <ScrollView>
-            {reportData.map((report) => (
-              <View
-                key={report.id}
-                className="bg-gray-50 p-4 mb-3 rounded-lg border border-gray-200"
-              >
-                {/* Avatar and Info */}
-                <View className="flex-row items-center justify-between">
-                  <View className="flex-row items-center">
-                    <View className="w-10 h-10 rounded-full bg-gray-300 justify-center items-center mr-3">
-                      <Text className="text-white font-bold">
-                        {report.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")
-                          .toUpperCase()}
-                      </Text>
-                    </View>
-                    <View>
-                      <Text className="font-semibold">{report.name}</Text>
-                      <Text className="text-gray-500 text-sm">
-                        {report.role}
-                      </Text>
-                    </View>
-                  </View>
-                  {report.percentage ? (
-                    <View
-                      className={`px-2 py-1 rounded-md ${report.color} text-xs`}
-                    >
-                      <Text className="text-xs font-medium">
-                        {report.percentage}
-                      </Text>
-                    </View>
-                  ) : (
-                    <View className={`px-2 py-1 rounded-md ${report.color}`}>
-                      <Text className="text-xs font-medium">
-                        {report.status}
-                      </Text>
-                    </View>
-                  )}
+      <Text className="text-2xl font-bold mb-1">Interview Reports</Text>
+      <Text className="text-base text-gray-600 mb-4">
+        You can view your reports here.
+      </Text>
+      <ScrollView>
+        {reportData.map((report) => (
+          <View
+            key={report.id}
+            className="bg-gray-50 p-4 mb-4 rounded-lg border border-gray-200"
+          >
+            {/* Avatar and Info */}
+            <View className="flex-row items-center justify-between">
+              <View className="flex-row items-center">
+                <View className="w-10 h-10 rounded-full bg-gray-300 justify-center items-center mr-3">
+                  <Text className="text-white font-bold">
+                    {report.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .toUpperCase()}
+                  </Text>
                 </View>
-
-                {/* Date */}
-                <Text className="text-gray-400 text-xs mt-2">
-                  {report.date}
-                </Text>
-
-                {/* Action Buttons */}
-                <View className="flex-row mt-3 gap-2">
-                  <TouchableOpacity
-                    className={`flex-1 px-4 py-2 rounded-md border ${
-                      report.pdfAvailable
-                        ? "bg-green-500 border-green-500"
-                        : "bg-gray-200 border-gray-300"
-                    }`}
-                    disabled={!report.pdfAvailable}
-                  >
-                    <Text
-                      className={`text-center text-sm font-semibold ${
-                        report.pdfAvailable ? "text-white" : "text-gray-500"
-                      }`}
-                    >
-                      PDF
-                    </Text>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity className="flex-1 px-4 py-2 rounded-md border border-blue-500">
-                    <Text className="text-center text-sm font-semibold text-blue-500">
-                      Report
-                    </Text>
-                  </TouchableOpacity>
+                <View>
+                  <Text className="font-semibold">{report.name}</Text>
+                  <Text className="text-gray-500 text-sm">
+                    {report.role}
+                  </Text>
                 </View>
               </View>
-            ))}
-          </ScrollView>
-        </View>
+              {report.percentage ? (
+                <View
+                  className={`px-2 py-1 rounded-md ${report.color} text-xs`}
+                >
+                  <Text className="text-xs font-medium">
+                    {report.percentage}
+                  </Text>
+                </View>
+              ) : (
+                <View className={`px-2 py-1 rounded-md ${report.color}`}>
+                  <Text className="text-xs font-medium">
+                    {report.status}
+                  </Text>
+                </View>
+              )}
+            </View>
+
+            {/* Date */}
+            <Text className="text-gray-400 text-xs mt-2">
+              {report.date}
+            </Text>
+
+            {/* Action Buttons */}
+            <View className="flex-row mt-3 gap-2">
+              <TouchableOpacity
+                className={`flex-1 px-4 py-2 rounded-md border ${report.pdfAvailable
+                  ? "bg-green-500 border-green-500"
+                  : "bg-gray-200 border-gray-300"
+                  }`}
+                disabled={!report.pdfAvailable}
+              >
+                <Text
+                  className={`text-center text-sm font-semibold ${report.pdfAvailable ? "text-white" : "text-gray-500"
+                    }`}
+                >
+                  PDF
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity className="flex-1 px-4 py-2 rounded-md border border-blue-500">
+                <Text className="text-center text-sm font-semibold text-blue-500">
+                  Report
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        ))}
       </ScrollView>
     </ScreenContainer>
   );
